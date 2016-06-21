@@ -1,0 +1,11 @@
+ function getList(&$result, $p_id = 0){
+        
+        $res= $this->where(['p_id'=>$p_id])->select();//得到的是二维数组
+        
+        foreach ($res as $val){
+            $result[] =$val;
+            $this->getList($result,$p_id = $val['c_id']); 
+        }
+        return $result;
+    }
+    //tp 3.2下 无限目录的获取 仅仅获得所有商品,再想办法用缩进排列出来
