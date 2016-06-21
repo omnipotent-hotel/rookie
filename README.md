@@ -1,0 +1,2 @@
+# rookie
+a php beginer
